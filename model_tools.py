@@ -89,17 +89,10 @@ class RasterAnalysis:
         
 class ModelAnalysis:
     def __init__(self, **kwargs):
-        self.mode = 'host'
-        self.m = 0.5
-        self.z = 5
-        self.N_iter = 100
-
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-        params = {'m': self.m, 'z': self.z, 'N_iter': self.N_iter}
-
-        self.model = Model(mode=self.mode, **params)
+        self.model = Model(**kwargs)
         self.Sj, self.Sa, self.Ij, self.Ia = self.model.run_sim()
 
     def inf_prev(self):
