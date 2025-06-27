@@ -10,12 +10,13 @@ class Model:
 
 		self.mode = 'coevol' 	#Can be set to coevol, path, or host
 
-		self.b = 1				#Birth rate
-		self.mu = 0.2			#Death rate
-		self.k = 0.001			#Coefficient of density-dependent growth
-		self.beta = 0.001		#Baseline transmission rate
-		self.m = 0.5			#Maturation rate
-		self.z = 1				#Adult resistance bias
+		self.b = 1					#Birth rate
+		self.mu = 0.2				#Death rate
+		self.k = 0.001				#Coefficient of density-dependent growth
+		self.beta = 0.001			#Baseline transmission rate
+		self.m = 0.5				#Maturation rate
+		self.z = 1					#Adult resistance bias
+		self.assort = 1				#Age-based assortativity
 
 		for key, value in kwargs.items():
 			setattr(self, key, value)
@@ -46,10 +47,10 @@ class Model:
 		Ia = X[2*self.H_alleles+self.P_alleles:]
 
 		N = np.sum(Sa) + np.sum(Ia)
-		dSj = Sa*self.b - Sj*(self.mu + self.m + self.k*N + self.resJ*np.dot(self.infJ, Ia + Ij))
-		dSa = Sj*self.m - Sa*(self.mu + self.resA*np.dot(self.infA, Ia + Ij))
-		dIj = (Ia + Ij)*(np.dot(self.resJ, Sj)*self.infJ) - Ij*(self.mu + self.m + self.k*N)
-		dIa = (Ia + Ij)*(np.dot(self.resA, Sa)*self.infA - self.mu) + Ij*self.m
+		dSj = Sa*self.b - Sj*(self.mu + self.m + self.k*N + self.resJ*np.dot(self.infJ, Ia/self.assort + Ij*self.assort))
+		dSa = Sj*self.m - Sa*(self.mu + self.resA*np.dot(self.infA, Ia*self.assort + Ij/self.assort))
+		dIj = (Ia/self.assort + Ij*self.assort)*(np.dot(self.resJ, Sj)*self.infJ) - Ij*(self.mu + self.m + self.k*N)
+		dIa = (Ia*self.assort + Ij/self.assort)*(np.dot(self.resA, Sa)*self.infA - self.mu) + Ij*self.m
 		
 		X_out = np.concatenate((dSj, dSa, dIj, dIa))
 

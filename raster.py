@@ -6,15 +6,20 @@ import multiprocessing as mp
 from model import Model
 
 #Raster parameters
-output_path = 'host.p'			#Name of raster scenario
-size = 10						#Raster dimension
+output_path = 'path_assorted.p'			#Name of raster scenario
+size = 50						#Raster dimension
 cores = 8						#Number of CPU cores
 
 #Simulation parameters
 var_1 = 'm'						#First parameter rastered
 var_2 = 'z'						#Second parameter rastered
-mode = 'host'
+mode = 'path'
 N_iter = 200
+assortivity = 1.25
+
+
+m_vals = np.linspace(0.25, 1, size)
+z_vals = np.linspace(1, 10, size)
 
 def pass_to_sim(model):
 	return model.run_sim()
@@ -23,15 +28,12 @@ if __name__ == '__main__':
 	coords = []     #x, y coordinates of each simulation in raster
 	models = []     #Empty tuple for model classes
 
-	m_vals = np.linspace(0.25, 1, size)
-	z_vals = np.linspace(1, 10, size)
-
 	#Create raster of model classes for each parameter combination
 	print('Initializing Models...')
 	for i in range(size):
 		for j in range(size):
 			coords.append((i,j))
-			params = {'m': m_vals[i], 'z': z_vals[j], 'N_iter': N_iter, 'mode': mode}
+			params = {'m': m_vals[i], 'z': z_vals[j], 'assort': assortivity, 'N_iter': N_iter, 'mode': mode}
 			new_model = Model(**params)
 
 			models.append(new_model)
