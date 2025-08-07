@@ -85,7 +85,7 @@ class RasterAnalysis:
         ax.set_yticks(y_ticks, y_tick_labels)
         
         if label_x: ax.set_xlabel(r'maturation rate ($m$)')
-        if label_y: ax.set_ylabel(r'adult resistance bias ($z$)')
+        if label_y: ax.set_ylabel(r'adult resistance advantage ($z$)')
         
 class ModelAnalysis:
     def __init__(self, **kwargs):
