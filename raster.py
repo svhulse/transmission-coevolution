@@ -1,6 +1,7 @@
 import numpy as np
 import json
 import sys
+import os
 import tqdm
 import pickle as pkl
 import multiprocessing as mp
@@ -24,13 +25,11 @@ else:
 	size = 200						#Raster dimension
 	mode = 'host'
 
-scenario = 'no_juv_trans_50'
-
 with open('rasters.json', 'r') as data:
 	param_set = json.load(data)[scenario]
 
 #Raster parameters
-output_path = 'data/' + scenario + '_' + mode + '.p'
+output_path = './data/' + scenario + '_' + mode + '.p'
 N_iter = 200                            #Evolutionary iterations
 cores = 8								#Number of CPU cores
 
@@ -74,5 +73,6 @@ if __name__ == '__main__':
 		inds = [j for j in range(len(coords)) if coords[j][1] == i]
 		raster.append([results[j] for j in inds])
 
+	os.makedirs('./data', exist_ok=True)
 	with open(output_path, 'wb') as f:
 		pkl.dump([models, results], f)
