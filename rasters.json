@@ -1,0 +1,155 @@
+{
+    "default_init_50" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":50,
+            "Sa_gtp0":50,
+            "Ij_gtp0":50,
+            "Ia_gtp0":50
+        }
+    },
+    "default_init_60" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":60,
+            "Sa_gtp0":60,
+            "Ij_gtp0":60,
+            "Ia_gtp0":60
+        }
+    },
+    "no_juv_trans_50" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":50,
+            "Sa_gtp0":50,
+            "Ij_gtp0":50,
+            "Ia_gtp0":50
+        }
+    },
+    "no_juv_trans_60" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":60,
+            "Sa_gtp0":60,
+            "Ij_gtp0":60,
+            "Ia_gtp0":60
+        }
+    },
+    "fast_pathogen_evolution_init_50" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":true,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":50,
+            "Sa_gtp0":50,
+            "Ij_gtp0":50,
+            "Ia_gtp0":50
+        }
+    },
+    "fast_pathogen_evolution_init_60" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":true,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":60,
+            "Sa_gtp0":60,
+            "Ij_gtp0":60,
+            "Ia_gtp0":60
+        }
+    },
+    "variable_mu_50" : {
+        "var_1"     : "mu",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.1, 0.4],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "m":0.5,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":50,
+            "Sa_gtp0":50,
+            "Ij_gtp0":50,
+            "Ia_gtp0":50
+        }
+    },
+    "variable_mu_60" : {
+        "var_1"     : "mu",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.1, 0.4],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":true,
+            "b":1,
+            "m":0.5,
+            "k":0.001,
+            "beta":0.001,
+            "Sj_gtp0":60,
+            "Sa_gtp0":60,
+            "Ij_gtp0":60,
+            "Ia_gtp0":60
+        }
+    }
+}
+

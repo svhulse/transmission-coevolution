@@ -1,25 +1,29 @@
 import numpy as np
+import json
 import tqdm
 import pickle as pkl
 import multiprocessing as mp
 
 from model import Model
 
+scenario = 'no_juv_trans_50'
+
+with open('rasters.json', 'r') as data:
+	param_set = json.load(data)[scenario]
+
 #Raster parameters
-output_path = 'path_assorted.p'			#Name of raster scenario
-size = 50						#Raster dimension
-cores = 8						#Number of CPU cores
+mode = 'path'
+output_path = 'data/' + scenario + '_' + mode + '.p'
+size = 10								#Raster dimension
+N_iter = 200                            #Evolutionary iterations
+cores = 8								#Number of CPU cores
 
 #Simulation parameters
-var_1 = 'm'						#First parameter rastered
-var_2 = 'z'						#Second parameter rastered
-mode = 'path'
-N_iter = 200
-assortivity = 1.25
+var_1 = param_set['var_1']				#First parameter rastered
+var_2 = param_set['var_2']				#Second parameter rastered
 
-
-m_vals = np.linspace(0.25, 1, size)
-z_vals = np.linspace(1, 10, size)
+var_1_vals = np.linspace(param_set['var_1_vals'][0], param_set['var_1_vals'][1], size)
+var_2_vals = np.linspace(param_set['var_2_vals'][0], param_set['var_2_vals'][1], size)
 
 def pass_to_sim(model):
 	return model.run_sim()
@@ -28,12 +32,15 @@ if __name__ == '__main__':
 	coords = []     #x, y coordinates of each simulation in raster
 	models = []     #Empty tuple for model classes
 
+	print('Running Raster: ' + scenario)
+
 	#Create raster of model classes for each parameter combination
 	print('Initializing Models...')
 	for i in range(size):
 		for j in range(size):
 			coords.append((i,j))
-			params = {'m': m_vals[i], 'z': z_vals[j], 'assort': assortivity, 'N_iter': N_iter, 'mode': mode}
+			var_params = {param_set['var_1']: var_1_vals[i], param_set['var_2']: var_2_vals[j]}
+			params = var_params | param_set['params'] | {'N_iter': N_iter, 'mode': mode}
 			new_model = Model(**params)
 
 			models.append(new_model)
