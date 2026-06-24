@@ -1,5 +1,5 @@
 {
-    "default_trans_50" : {
+    "default_init_50" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
@@ -18,7 +18,7 @@
             "Ia_gtp0":50
         }
     },
-    "default_trans_60" : {
+    "default_init_60" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
