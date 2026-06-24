@@ -1,10 +1,28 @@
 import numpy as np
 import json
+import sys
 import tqdm
 import pickle as pkl
 import multiprocessing as mp
 
 from model import Model
+
+if len(sys.argv) == 2:
+	scenario = sys.argv[1]
+	size = 25
+	mode = 'host'
+elif len(sys.argv) == 3:
+	scenario = sys.argv[1]
+	mode = sys.argv[2]
+	size = 25
+elif len(sys.argv) == 4:
+	scenario = sys.argv[1]
+	mode = sys.argv[2]
+	size = int(sys.argv[3])
+else:
+	scenario = 'no_juv_trans_50'	#Name of raster scenario
+	size = 200						#Raster dimension
+	mode = 'host'
 
 scenario = 'no_juv_trans_50'
 
@@ -12,9 +30,7 @@ with open('rasters.json', 'r') as data:
 	param_set = json.load(data)[scenario]
 
 #Raster parameters
-mode = 'path'
 output_path = 'data/' + scenario + '_' + mode + '.p'
-size = 10								#Raster dimension
 N_iter = 200                            #Evolutionary iterations
 cores = 8								#Number of CPU cores
 
@@ -32,7 +48,7 @@ if __name__ == '__main__':
 	coords = []     #x, y coordinates of each simulation in raster
 	models = []     #Empty tuple for model classes
 
-	print('Running Raster: ' + scenario)
+	print('Running Raster: ' + scenario + ' in ' + mode + ' mode')
 
 	#Create raster of model classes for each parameter combination
 	print('Initializing Models...')
