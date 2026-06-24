@@ -1,5 +1,5 @@
 {
-    "default_init_50" : {
+    "default_trans_50" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
@@ -7,7 +7,7 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "mu":0.2,
             "k":0.001,
@@ -18,7 +18,7 @@
             "Ia_gtp0":50
         }
     },
-    "default_init_60" : {
+    "default_trans_60" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
@@ -26,7 +26,7 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "mu":0.2,
             "k":0.001,
@@ -37,7 +37,7 @@
             "Ia_gtp0":60
         }
     },
-    "no_juv_trans_50" : {
+    "juv_trans_init_50" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
@@ -45,7 +45,7 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":false,
+            "juv_trans":true,
             "b":1,
             "mu":0.2,
             "k":0.001,
@@ -56,7 +56,7 @@
             "Ia_gtp0":50
         }
     },
-    "no_juv_trans_60" : {
+    "juv_trans_init_60" : {
         "var_1"     : "m",
         "var_2"     : "z",
         "var_1_vals"    : [0.25, 1],
@@ -64,7 +64,7 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":false,
+            "juv_trans":true,
             "b":1,
             "mu":0.2,
             "k":0.001,
