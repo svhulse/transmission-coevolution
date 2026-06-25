@@ -12,10 +12,8 @@
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":50,
-            "Sa_gtp0":50,
-            "Ij_gtp0":50,
-            "Ia_gtp0":50
+            "S_gtp0":50,
+            "I_gtp0":50
         }
     },
     "default_init_60" : {
@@ -31,10 +29,59 @@
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":60,
-            "Sa_gtp0":60,
-            "Ij_gtp0":60,
-            "Ia_gtp0":60
+            "S_gtp0":60,
+            "I_gtp0":60
+        }
+    },
+    "initial_conds_mu1z5" : {
+        "var_1"     : "S_gtp0",
+        "var_2"     : "I_gtp0",
+        "var_1_vals"    : [0, 100],
+        "var_2_vals"    : [0, 100],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "m":0.5,
+            "z":5,
+            "mu":0.1,
+            "k":0.001,
+            "beta":0.001
+        }
+    },
+    "initial_conds_mu2z5" : {
+        "var_1"     : "S_gtp0",
+        "var_2"     : "I_gtp0",
+        "var_1_vals"    : [0, 100],
+        "var_2_vals"    : [0, 100],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "m":0.5,
+            "z":5,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001
+        }
+    },
+    "initial_conds_mu2z1" : {
+        "var_1"     : "S_gtp0",
+        "var_2"     : "I_gtp0",
+        "var_1_vals"    : [0, 100],
+        "var_2_vals"    : [0, 100],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "m":0.5,
+            "z":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.001
         }
     },
     "juv_trans_init_50" : {
@@ -50,10 +97,8 @@
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":50,
-            "Sa_gtp0":50,
-            "Ij_gtp0":50,
-            "Ia_gtp0":50
+            "S_gtp0":50,
+            "I_gtp0":50
         }
     },
     "juv_trans_init_60" : {
@@ -69,10 +114,8 @@
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":60,
-            "Sa_gtp0":60,
-            "Ij_gtp0":60,
-            "Ia_gtp0":60
+            "S_gtp0":60,
+            "I_gtp0":60
         }
     },
     "fast_pathogen_evolution_init_50" : {
@@ -83,15 +126,13 @@
         "params"    : {
             "fast_path":true,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":50,
-            "Sa_gtp0":50,
-            "Ij_gtp0":50,
-            "Ia_gtp0":50
+            "S_gtp0":50,
+            "I_gtp0":50
         }
     },
     "fast_pathogen_evolution_init_60" : {
@@ -102,18 +143,16 @@
         "params"    : {
             "fast_path":true,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "mu":0.2,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":60,
-            "Sa_gtp0":60,
-            "Ij_gtp0":60,
-            "Ia_gtp0":60
+            "S_gtp0":60,
+            "I_gtp0":60
         }
     },
-    "variable_mu_50" : {
+    "variable_mu_init_50" : {
         "var_1"     : "mu",
         "var_2"     : "z",
         "var_1_vals"    : [0.1, 0.4],
@@ -126,13 +165,11 @@
             "m":0.5,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":50,
-            "Sa_gtp0":50,
-            "Ij_gtp0":50,
-            "Ia_gtp0":50
+            "S_gtp0":50,
+            "I_gtp0":50
         }
     },
-    "variable_mu_60" : {
+    "variable_mu_init_60" : {
         "var_1"     : "mu",
         "var_2"     : "z",
         "var_1_vals"    : [0.1, 0.4],
@@ -145,10 +182,8 @@
             "m":0.5,
             "k":0.001,
             "beta":0.001,
-            "Sj_gtp0":60,
-            "Sa_gtp0":60,
-            "Ij_gtp0":60,
-            "Ia_gtp0":60
+            "S_gtp0":60,
+            "I_gtp0":60
         }
     }
 }

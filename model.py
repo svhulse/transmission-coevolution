@@ -22,10 +22,8 @@ class Model:
 		self.alpha = 0				#Induced mortality
 
 		#Set inital condition
-		self.Sj_gtp0 = 50
-		self.Sa_gtp0 = 50
-		self.Ij_gtp0 = 50
-		self.Ia_gtp0 = 50
+		self.S_gtp0 = 50
+		self.I_gtp0 = 50
 
 		for key, value in kwargs.items():
 			setattr(self, key, value)
@@ -35,10 +33,10 @@ class Model:
 		self.Ij_0 = np.zeros(self.P_alleles)
 		self.Ia_0 = np.zeros(self.P_alleles)
 		
-		self.Sj_0[self.Sj_gtp0] = 100
-		self.Sa_0[self.Sa_gtp0] = 200
-		self.Ij_0[self.Ij_gtp0] = 10
-		self.Ia_0[self.Ia_gtp0] = 20
+		self.Sj_0[int(self.S_gtp0)] = 100
+		self.Sa_0[int(self.S_gtp0)] = 200
+		self.Ij_0[int(self.I_gtp0)] = 10
+		self.Ia_0[int(self.I_gtp0)] = 20
 
 		if self.tradeoff == 'log':
 			self.resJ = np.logspace(-1, 1, self.H_alleles, base=self.evol_range)
