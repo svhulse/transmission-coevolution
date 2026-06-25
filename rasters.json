@@ -36,8 +36,8 @@
     "initial_conds_mu1z5" : {
         "var_1"     : "S_gtp0",
         "var_2"     : "I_gtp0",
-        "var_1_vals"    : [0, 100],
-        "var_2_vals"    : [0, 100],
+        "var_1_vals"    : [0, 99],
+        "var_2_vals"    : [0, 99],
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
@@ -53,8 +53,8 @@
     "initial_conds_mu2z5" : {
         "var_1"     : "S_gtp0",
         "var_2"     : "I_gtp0",
-        "var_1_vals"    : [0, 100],
-        "var_2_vals"    : [0, 100],
+        "var_1_vals"    : [0, 99],
+        "var_2_vals"    : [0, 99],
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
@@ -70,8 +70,8 @@
     "initial_conds_mu2z1" : {
         "var_1"     : "S_gtp0",
         "var_2"     : "I_gtp0",
-        "var_1_vals"    : [0, 100],
-        "var_2_vals"    : [0, 100],
+        "var_1_vals"    : [0, 99],
+        "var_2_vals"    : [0, 99],
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
