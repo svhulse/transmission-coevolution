@@ -160,7 +160,7 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "m":0.5,
             "k":0.001,
@@ -177,9 +177,43 @@
         "params"    : {
             "fast_path":false,
             "tradeoff":"log",
-            "juv_trans":true,
+            "juv_trans":false,
             "b":1,
             "m":0.5,
+            "k":0.001,
+            "beta":0.001,
+            "S_gtp0":60,
+            "I_gtp0":60
+        }
+    },
+    "mortality_inducing_init_50" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "alpha":0.1,
+            "b":1,
+            "k":0.001,
+            "beta":0.001,
+            "S_gtp0":50,
+            "I_gtp0":50
+        }
+    },
+    "mortality_inducing_init_60" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "alpha":0.1,
+            "b":1,
             "k":0.001,
             "beta":0.001,
             "S_gtp0":60,
