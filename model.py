@@ -89,14 +89,10 @@ class Model:
 			Ia = X[2*self.H_alleles+self.P_alleles:]
 
 			N = np.sum(Sa) + np.sum(Ia)
-			dSj = Sa*self.b - \
-				Sj*(self.mu + self.m + self.k*N + self.resJ*np.dot(self.infJ, Ia))
-			dSa = Sj*self.m - \
-				Sa*(self.mu + self.resA*np.dot(self.infA, Ia))
-			dIj = Ia*(np.dot(self.resJ, Sj)*self.infJ) - \
-				Ij*(self.mu + self.m + self.k*N)
-			dIa = Ia*(np.dot(self.resA, Sa)*self.infA - self.mu) + \
-				Ij*self.m
+			dSj = Sa*self.b - Sj*(self.mu + self.m + self.k*N + self.resJ*np.dot(self.infJ, Ia))
+			dSa = Sj*self.m - Sa*(self.mu + self.resA*np.dot(self.infA, Ia))
+			dIj = Ia*(np.dot(self.resJ, Sj)*self.infJ) - Ij*(self.mu + self.alpha + self.m + self.k*N)
+			dIa = Ia*(np.dot(self.resA, Sa)*self.infA) - Ia*(self.mu + self.alpha) + Ij*self.m
 
 			X_out = np.concatenate((dSj, dSa, dIj, dIa))
 
