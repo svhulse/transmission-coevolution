@@ -84,6 +84,40 @@
             "beta":0.001
         }
     },
+    "high_trans_init_50" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.00125,
+            "S_gtp0":50,
+            "I_gtp0":50
+        }
+    },
+    "high_trans_init_60" : {
+        "var_1"     : "m",
+        "var_2"     : "z",
+        "var_1_vals"    : [0.25, 1],
+        "var_2_vals"    : [1, 10],
+        "params"    : {
+            "fast_path":false,
+            "tradeoff":"log",
+            "juv_trans":false,
+            "b":1,
+            "mu":0.2,
+            "k":0.001,
+            "beta":0.00125,
+            "S_gtp0":60,
+            "I_gtp0":60
+        }
+    },
     "juv_trans_init_50" : {
         "var_1"     : "m",
         "var_2"     : "z",
